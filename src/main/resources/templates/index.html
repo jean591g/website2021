@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:fb="http://ogp.me/ns/fb#">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Better World Inc. images by jm babonneau</title>
+
+  <meta property="og:title" content="Better World Inc. images">
+  <meta property="og:type" content="website, portfolio, art, photography, webshop">
+  <meta property=”og:description” content=”Photography, video, artworks by jm babonneau since 1999.”>
+  <meta property="og:url" content="https://www.babonneau.com">
+  <meta property="og:image" content="https://www.babonneau.com/images/babonneau-com_index_opengraph_2021_day.jpg">
+  <meta property="fb:admins" content="{738022854}"/>
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    html,
+    body {
+      overflow-x: hidden;
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    body,
+    main {
+      position: relative;
+      width: 100%;
+      height: 100%;
+    }
+
+    .bgvid {
+      position: fixed;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+
+    #bgvid1 {
+      opacity: 1;
+      z-index: -1;
+      transition: opacity ease 0.3s;
+    }
+
+    #bgvid1.active {
+      opacity: 0;
+    }
+
+    #bgvid2 {
+      opacity: 0;
+      z-index: -2;
+      transition: opacity ease 0.3s;
+    }
+
+    #bgvid2.active {
+      opacity: 1;
+    }
+
+    .btn {
+      position: absolute;
+      background: rgba(0, 0, 0, 0.2);
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .btn:after {
+      content: '';
+      position: absolute;
+      background: url(button_animation.gif);
+      left: -10%;
+      right: -10%;
+      bottom: -50%;
+      top: -50%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center center;
+    }
+
+    #btnArtWorkshop {
+      left: 50%;
+      width: 23vh;
+      height: 11vh;
+      transform: translateX(-100%);
+      bottom: 25vh;
+    }
+
+    #btnArtWorkshop.horizontal {
+      bottom: 50vh;
+      width: 13vw;
+      height: 6vw;
+      transform: translate(-100%, 14vw);
+    }
+
+    #btnClient {
+      left: 50%;
+      width: 23vh;
+      height: 11vh;
+      transform: translateX(2vh);
+      bottom: 25vh;
+    }
+
+    #btnClient.horizontal {
+      bottom: 50vh;
+      width: 13vw;
+      height: 6vw;
+      transform: translate(1vw, 14vw);
+    }
+
+    #btnMailbox {
+      left: 50%;
+      width: 15vh;
+      height: 11vh;
+      transform: translateX(10vh);
+      bottom: 12vh;
+    }
+
+    #btnMailbox.horizontal {
+      bottom: 50vh;
+      width: 9vw;
+      height: 6.5vw;
+      transform: translate(5.5vw, 21.5vw);
+    }
+
+    #btnMailbox:after {
+      left: -64%;
+      right: -35%;
+      background: url(mail_button.gif);
+      background-size: cover;
+    }
+
+    .grid {
+      visibility: hidden;
+      position: absolute;
+      background-color: red;
+    }
+
+    .grid.x1 {
+      top: 0;
+      left: 25%;
+      height: 100%;
+      width: 1px;
+    }
+
+    .grid.x2 {
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: 1px;
+    }
+
+    .grid.x3 {
+      top: 0;
+      left: 75%;
+      height: 100%;
+      width: 1px;
+    }
+
+    .grid.y1 {
+      left: 0;
+      top: 50%;
+      width: 100%;
+      height: 1px;
+    }
+
+    .grid.y2 {
+      left: 0;
+      top: 75%;
+      width: 100%;
+      height: 1px;
+    }
+
+    @media (hover: none),
+    (hover: on-demand) {
+      #btnArtWorkshop {
+        left: 50%;
+        width: 23vh;
+        height: 11vh;
+        transform: translateX(-100%);
+        bottom: 25%;
+      }
+
+      #btnArtWorkshop.horizontal {
+        top: 50%;
+        margin-top: 8%;
+        width: 13vw;
+        height: 6vw;
+        transform: translateX(-100%);
+      }
+
+      #btnClient {
+        left: 50%;
+        width: 23vh;
+        height: 11vh;
+        transform: translateX(2vh);
+        bottom: 25%;
+      }
+
+      #btnClient.horizontal {
+        top: 50%;
+        left: 51%;
+        margin-top: 8%;
+        width: 13vw;
+        height: 6vw;
+        transform: none;
+      }
+
+      #btnMailbox {
+        left: 50%;
+        width: 15vh;
+        height: 11vh;
+        transform: translateX(9vh);
+        bottom: 10vh;
+      }
+
+      #btnMailbox.horizontal {
+        top: 50%;
+        left: 55.5%;
+        margin-top: 15%;
+        width: 9vw;
+        height: 6vw;
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <video playsinline autoplay muted loop class="bgvid" id="bgvid1">
+    <source src="videos/video-phone.mp4" type="video/mp4" media="all and (max-width: 480px)">
+    <source src="videos/video-tablet.mp4" type="video/mp4" media="all and (max-width: 992px)">
+    <source src="videos/video-desktop.mp4" type="video/mp4">
+  </video>
+  <video playsinline autoplay muted loop class="bgvid" id="bgvid2">
+    <source src="videos/video-phone-night.mp4" type="video/mp4" media="all and (max-width: 480px)">
+    <source src="videos/video-tablet-night.mp4" type="video/mp4" media="all and (max-width: 992px)">
+    <source src="videos/video-desktop-night.mp4" type="video/mp4">
+  </video>
+  <main>
+    <div class="grid x1"></div>
+    <div class="grid x2"></div>
+    <div class="grid x3"></div>
+    <div class="grid y1"></div>
+    <div class="grid y2"></div>
+    <a id="btnArtWorkshop" class="btn" href="https://art.babonneau.com" target="_self"></a>
+    <a id="btnClient" class="btn" href="https://jobs.babonneau.com" target="_self"></a>
+    <!-- <a id="btnMailbox" class="btn" href="mailto:babonneau@gmail.com"></a>
+    -->
+  </main>
+
+  <script>
+    const videoRatio = 960 / 540;
+    function adjustButtonPosition() {
+      const windowRatio = window.innerWidth / window.innerHeight;
+      if (windowRatio > videoRatio) {
+        document.getElementById("btnArtWorkshop").className = "btn horizontal";
+        document.getElementById("btnClient").className = "btn horizontal";
+        // document.getElementById("btnMailbox").className = "btn horizontal";
+      } else {
+        document.getElementById("btnArtWorkshop").className = "btn";
+        document.getElementById("btnClient").className = "btn";
+        // document.getElementById("btnMailbox").className = "btn";
+      }
+    }
+    function showNightVideo() {
+      document.getElementById("bgvid1").className = "bgvid active";
+      document.getElementById("bgvid2").className = "bgvid active";
+    }
+    function showDayVideo() {
+      document.getElementById("bgvid1").className = "bgvid";
+      document.getElementById("bgvid2").className = "bgvid";
+    }
+    (function () {
+      // the DOM will be available here
+      window.addEventListener("resize", adjustButtonPosition);
+      adjustButtonPosition();
+      document.getElementById("btnArtWorkshop").addEventListener("mouseenter", showNightVideo);
+      document.getElementById("btnClient").addEventListener("mouseenter", showNightVideo);
+      // document.getElementById("btnMailbox").addEventListener("mouseenter", showNightVideo);
+      document.getElementById("btnArtWorkshop").addEventListener("mouseleave", showDayVideo);
+      document.getElementById("btnClient").addEventListener("mouseleave", showDayVideo);
+      // document.getElementById("btnMailbox").addEventListener("mouseleave", showDayVideo);
+    })();
+  </script>
+</body>
+
+</html>
